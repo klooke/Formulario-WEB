@@ -8,24 +8,24 @@
 
         <title>Cadastro de clientes</title>
 </head>
-<body>
-	<div class="container">
+<body class="container">
+	<div class="row">
 	        <h1>Cadastro:<h1>
 	</div>
-	<div class="container">
-		<form action="index.js">
+	<div class="row">
+		<form action="database.php">
 			<div class="mb-3">
 				<label for="nome" class="form-label">Nome:</label>
 				<input id="nome" name="nome_cliente" class="form-control" required></input>
 
 				<label for="cpf" class="form-label">CPF:</label>
-				<input id="cpf" name="cpf_cliente" class="form-control" minlength="11"  maxlength="11" required></input>
+				<input id="cpf" name="cpf_cliente" class="form-control" maxlength=11  pattern="[0-9]{11}" title="Digite um CPF válido de 11 dígitos." required></input>
 
 				<label for="email" class="form-label">E-mail:</label>
-				<input id="email" name="email_cliente" type="email" class="form-control" required></input>
+				<input id="email" name="email_cliente" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Digite um email válido (user@email.domain)." required></input>
 
 				<label for="data_nascimento" class="form-label">Data de nascimento:</label>
-				<input id="data_nascimento" name="data_nascimento_cliente" class="form-control" required></input>
+				<input id="data_nascimento" name="data_nascimento_cliente" class="form-control" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}" title="Digite uma data de nascimento válida (Ex.: 01/01/1900)." required></input>
 			</div>
 			<div class="d-grid gap-2 d-md-block">
 				<button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
@@ -33,7 +33,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="container">
+	<div class="row">
 		<table class="table">
 			<thread>
 				<tr>
