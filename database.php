@@ -1,25 +1,27 @@
 <?php
 
-// Validação do servidor simples
+include("index.php");
+
+// Validação dos dados no servidor
 if ($_REQUEST["nome_cliente"] == "")
 {
-	echo "Nome do cliente em branco.";
-	exit;
+        alert("Nome do cliente em branco.");
+        returnIndex();
 }
 if (strlen($_REQUEST["cpf_cliente"]) != 11)
 {
-	echo "CPF do cliente precisa ter 11 caracteres.";
-	exit;
+        alert("CPF do cliente precisa ter 11 caracteres.");
+        returnIndex();
 }
 if (!str_contains($_REQUEST["email_cliente"], '@') || !str_contains($_REQUEST["email_cliente"], '.'))
 {
-	echo "Email inválido.";
-	exit;
+        alert("Email inválido.");
+        returnIndex();
 }
 if ($_REQUEST["data_nascimento_cliente"] == "")
 {
-	echo "Data de nascimento em branco.";
-	exit;
+        alert("Data de nascimento em branco.");
+        returnIndex();
 }
 
 // Banco de Dados PostgreSQL
@@ -36,20 +38,21 @@ try
 
 	if ($result)
 	{
-		echo "Os dados foram inseridos com sucesso!";
+		alert("Os dados foram inseridos com sucesso!");
 	}
 	else
 	{
-		echo "Ocorreu um erro ao inserir os dados!";
+		alert("Ocorreu um erro ao inserir os dados!");
 	}
 }
 catch(PDOException $ex)
 {
-	echo "Não foi possivel concluir a inserção." . $ex->getMessage();
+	alert("Não foi possivel concluir a inserção." . $ex->getMessage());
 }
 finally
 {
 	$sth = null;
 	$dsn = null;
+	returnIndex();
 }
 
