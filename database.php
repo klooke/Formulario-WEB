@@ -1,6 +1,7 @@
 <?php
 
 include("index.php");
+include("config.php");
 
 // Validação dos dados no servidor
 if ($_REQUEST["nome_cliente"] == "")
@@ -23,11 +24,6 @@ if ($_REQUEST["data_nascimento_cliente"] == "")
         alert("Data de nascimento em branco.");
         returnIndex();
 }
-
-// Banco de Dados PostgreSQL
-$dsn = "pgsql:dbname=klooke;host=127.0.0.1";
-$user = "klooke";
-$password = "password";
 
 // Conexão e Inserção
 try
