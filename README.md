@@ -1,3 +1,3 @@
 # Formulario-WEB
 
-- Formulário de cadastro simples (HTML5, JavaScript e PHP), utiliza o Bootstrap 5 como estilo e PostgreSQL como banco de dados.
+- Formulário de cadastro simples (HTML5, JavaScript e PHP), utiliza Bootstrap 5 e PostgreSQL.
